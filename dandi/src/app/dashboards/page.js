@@ -24,19 +24,6 @@ export default function Dashboards() {
   const [toast, setToast] = useState({ show: false, message: '', type: 'success' });
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  useEffect(() => {
-    fetchApiKeys();
-  }, []);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  const showToast = (message, type = 'success') => {
-    setToast({ show: true, message, type });
-    setTimeout(() => setToast({ show: false, message: '', type: 'success' }), 3000);
-  };
-
   const fetchApiKeys = async () => {
     const { data, error } = await supabase
       .from('api_keys')
@@ -50,6 +37,19 @@ export default function Dashboards() {
       setApiKeys(data);
       showToast('API keys loaded successfully');
     }
+  };
+
+  useEffect(() => {
+    fetchApiKeys();
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const showToast = (message, type = 'success') => {
+    setToast({ show: true, message, type });
+    setTimeout(() => setToast({ show: false, message: '', type: 'success' }), 3000);
   };
 
   return (

@@ -55,7 +55,7 @@ export default function CreateApiKeyModal({ setIsModalOpen, setApiKeys, showToas
             />
           </div>
           <p className="text-sm text-gray-600 mb-4">
-            If the combined usage of all your keys exceeds your plan's limit, all requests will be rejected.
+            If the combined usage of all your keys exceeds your plan&apos;s limit, all requests will be rejected.
           </p>
           <div className="flex justify-end space-x-4">
             <button
