@@ -1,0 +1,7 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/dashboards/page": "app/dashboards/page.js",
+  "/playground/page": "app/playground/page.js",
+  "/api/validate-key/route": "app/api/validate-key/route.js",
+  "/protected/page": "app/protected/page.js"
+}
